@@ -21,8 +21,8 @@ const App = (props) => {
   console.log('snapshot', props);
   return (
     <div>
-      <h1>My Prototype</h1>
-      <p>{JSON.stringify(props)}</p> 
+      <h1>Parsing into the O-bject!</h1>
+      <div>{JSON.stringify(props.courseID.behaviors)} <br/>  <br/> <p>All my Firebase things: <br /> </p>{JSON.stringify(props)}</div>
     </div>
   );
 }
