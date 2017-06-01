@@ -22,7 +22,7 @@ const App = (props) => {
   return (
     <div>
       <h1>My Prototype</h1>
-      <p>{JSON.stringify(props)}</p>
+      <p>{JSON.stringify(props)}</p> 
     </div>
   );
 }
