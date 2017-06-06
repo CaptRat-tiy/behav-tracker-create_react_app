@@ -4,7 +4,6 @@ import './index.css';
 import * as firebase from 'firebase';
 import registerServiceWorker from './registerServiceWorker';
 
-
   const config = {
     apiKey: "AIzaSyAjB5xxpo_eOVJ7LFoDJUN51TGXyhkq1IQ",
     authDomain: "behavioral-tracker-app.firebaseapp.com",
@@ -24,16 +23,15 @@ import registerServiceWorker from './registerServiceWorker';
     updateBehaviors
   };
 
-  // Now we can use our actions in our components
   const App = props => {
     console.log('snapshot', props);
     return (
       <div>
-        <h1>My Prototype</h1>
+        <h1>My App talking with Firebase</h1>
         <button
           onClick={() => props.addBehavior({ name: 'Perfect Kid!'})}
         >
-          Add Stuff
+          Add new behaviors
         </button>
         <ul>
           {Object.keys(props.behaviors).map((key, index) => <li key={index}>{props.behaviors[key].name}</li>)}
@@ -53,6 +51,4 @@ import registerServiceWorker from './registerServiceWorker';
     )
   });
 
-
-// ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
