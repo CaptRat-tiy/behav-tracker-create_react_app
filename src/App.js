@@ -16,12 +16,12 @@ import './styles/App.css';
             Object.keys(props.behaviors).map((key, index) => {
               return <li key={index}>{props.behaviors[key].name}
                 <img src={props.behaviors[key].image} />
-              <li/>
+              </li>
               }
             )
           }
-        <ul/>
-      <div/>
+        </ul>
+      </div>
     );
   }
 
