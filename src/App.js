@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/App.css';
-import Action from 'Action';
+import Action from './Action'
 
   const App = props => {
     console.log('snapshot', props);
@@ -10,7 +10,7 @@ import Action from 'Action';
         <button
           onClick={() => props.addBehavior({ name: 'Perfect Kid!'})}
         >
-          Add new behaviors
+          Add new "behavior" to Firebase database
         </button>
         <ul>
           {
