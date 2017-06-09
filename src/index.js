@@ -1,47 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/App.css';
+import App from './App';
 import * as firebase from 'firebase';
 import registerServiceWorker from './registerServiceWorker';
 
-  const config = {
-    apiKey: "AIzaSyAjB5xxpo_eOVJ7LFoDJUN51TGXyhkq1IQ",
-    authDomain: "behavioral-tracker-app.firebaseapp.com",
-    databaseURL: "https://behavioral-tracker-app.firebaseio.com",
-    storageBucket: "behavioral-tracker-app.appspot.com"
-  };
+const config = {
+  apiKey: "AIzaSyAjB5xxpo_eOVJ7LFoDJUN51TGXyhkq1IQ",
+  authDomain: "behavioral-tracker-app.firebaseapp.com",
+  databaseURL: "https://behavioral-tracker-app.firebaseio.com",
+  storageBucket: "behavioral-tracker-app.appspot.com"
+};
 
-  const database = firebase
-    .initializeApp(config)
-    .database()
-    .ref();
+const database = firebase
+  .initializeApp(config)
+  .database()
+  .ref();
 
-  const addBehavior = data => database.child('behaviors').push(data, response => response);
-  const updateBehaviors = (id, data) => database.child(`behaviors/${id}`).update(data, response => response);
-  const actions = {
-    addBehavior,
-    updateBehaviors
-  };
+const addBehavior = data => database.child('behaviors').push(data, response => response);
 
-  const App = props => {
-    console.log('snapshot', props);
-    return (
-      <div>
-        <h1>My App talking with Firebase</h1>
-        <button
-          onClick={() => props.addBehavior({ name: 'Perfect Kid!'})}
-        >
-          Add new behaviors
-        </button>
-        <ul>
-          {Object.keys(props.behaviors).map((key, index) => <li key={index}>{props.behaviors[key].name} <img src={props.behaviors[key].image}></img></li>)}
-        </ul>
-      </div>
-    );
-  }
+const updateBehaviors = (id, data) => database.child(`behaviors/${id}`).update(data, response => response);
 
-  database.on('value', snapshot => {
-    const store = snapshot.val();
+const actions = {
+  addBehavior,
+  updateBehaviors
+};
+
+database.on('value', snapshot => {
+  const store = snapshot.val();
+
     ReactDOM.render(
       <App
         {...actions}
@@ -49,6 +35,7 @@ import registerServiceWorker from './registerServiceWorker';
       />,
       document.getElementById('root')
     )
-  });
+  }
+)
 
-registerServiceWorker();
+registerServiceWorker()
