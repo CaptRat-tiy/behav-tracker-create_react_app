@@ -34,7 +34,7 @@ import registerServiceWorker from './registerServiceWorker';
           Add new behaviors
         </button>
         <ul>
-          {Object.keys(props.behaviors).map((key, index) => <li key={index}>{props.behaviors[key].name}</li>)}
+          {Object.keys(props.behaviors).map((key, index) => <li key={index}>{props.behaviors[key].name} {props.behaviors[key].image}</li>)}
         </ul>
       </div>
     );
