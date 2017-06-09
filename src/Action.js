@@ -11,16 +11,17 @@ export default class Action extends React.Component {
       students: [],
       teacherInfo: {},
       behaviors: [],
+      database: {}
     }
   }
 
   componentWillMount(){
     database.on("child_added", (snapshot)=>{
-      const courseData = this.changeIntoArray(snapshot.val())
+      const courseData = this.snapshot.val()
       const teacherInfo = snapshot.val().teacherID
-      const students = this.changeIntoArray(snapshot.val().studentArray)
-      const behaviors = this.changeIntoArray(snapshot.val().behaviors)
-      const analytics = this.changeIntoArray(snapshot.val().analytics)
+      const students = this.snapshot.val().studentArray
+      const behaviors = this.snapshot.val().behaviors
+      const analytics = this.snapshot.val().analytics
 
       this.setState({
         courseData: courseData,
@@ -61,6 +62,7 @@ export default class Action extends React.Component {
     const courseData=this.state.courseData
     const teacherInfo=this.state.teacherInfo
     const behaviors=this.state.behaviors
+
 
     return (
       <div className="body">

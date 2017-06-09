@@ -22,9 +22,11 @@ const updateBehaviors = (id, data) => database.child(`behaviors/${id}`).update(d
 
 const actions = {
   addBehavior,
-  updateBehaviors
+  // updateBehaviors,
+  database,
 };
 
+console.log(database);
 database.on('value', snapshot => {
   const store = snapshot.val();
 

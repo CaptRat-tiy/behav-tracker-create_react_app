@@ -1,6 +1,14 @@
 import React from 'react';
 import './styles/App.css';
-import Action from './Action'
+// import Action from './Action'
+
+    // this.state = {
+    //   courseData: {},
+    //   students: [],
+    //   teacherInfo: {},
+    //   behaviors: [],
+    //   database: {}
+    // }
 
   const App = props => {
     console.log('snapshot', props);
@@ -22,7 +30,4 @@ import Action from './Action'
           }
         </ul>
       </div>
-    );
-  }
-
-export default App;
+    )};
