@@ -15,8 +15,7 @@ import './styles/App.css';
           {
             Object.keys(props.behaviors).map((key, index) => {
               return <li key={index}>{props.behaviors[key].name}
-                <img src={props.behaviors[key].image} />
-              </li>
+                <img src={props.behaviors[key].image} alt={props.behaviors[key].alt} /></li>
               }
             )
           }
