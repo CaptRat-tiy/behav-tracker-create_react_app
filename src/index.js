@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/App.css';
 import * as firebase from 'firebase';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -34,7 +34,7 @@ import registerServiceWorker from './registerServiceWorker';
           Add new behaviors
         </button>
         <ul>
-          {Object.keys(props.behaviors).map((key, index) => <li key={index}>{props.behaviors[key].name} {props.behaviors[key].image}</li>)}
+          {Object.keys(props.behaviors).map((key, index) => <li key={index}>{props.behaviors[key].name} <img src={props.behaviors[key].image}></img></li>)}
         </ul>
       </div>
     );
