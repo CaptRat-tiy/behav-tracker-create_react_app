@@ -30,4 +30,7 @@ import './styles/App.css';
           }
         </ul>
       </div>
-    )};
+    )
+  };
+
+export default App;
