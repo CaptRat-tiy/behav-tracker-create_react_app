@@ -1,36 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Action extends React.Component {
+export default class Action extends Component {
   constructor(){
     super();
     this.handleBehaviorClick=this.handleBehaviorClick.bind(this)
     this.handleStudentClick=this.handleStudentClick.bind(this)
 
-    this.state = {
-      courseData: {},
-      students: [],
-      teacherInfo: {},
-      behaviors: [],
-      database: {}
-    }
-  }
 
-  componentWillMount(){
-    database.on("child_added", (snapshot)=>{
-      const courseData = this.snapshot.val()
-      const teacherInfo = snapshot.val().teacherID
-      const students = this.snapshot.val().studentArray
-      const behaviors = this.snapshot.val().behaviors
-      const analytics = this.snapshot.val().analytics
-
-      this.setState({
-        courseData: courseData,
-        students: students,
-        teacherInfo: teacherInfo,
-        behaviors: behaviors,
-      })
-    })
-  }
 
   handleStudentClick(student){
   }
