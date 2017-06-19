@@ -32,9 +32,14 @@ export default class App extends Component {
       <div>
         <h1>My App talking with Firebase</h1>
         <button
-          onClick={() => this.props.addBehavior({ name: 'Perfect Kid!'})}
+          onClick={() => this.props.addBehavior({ name: 'applies new ideas'})}
         >
           Add new "behavior" to Firebase database
+        </button>
+        <button
+          onClick={() => this.props.addStudent({ name: 'test'})}
+        >
+          Add new student to Firebase database
         </button>
         <ul>
           {

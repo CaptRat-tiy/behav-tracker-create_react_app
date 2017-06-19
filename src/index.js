@@ -20,8 +20,11 @@ const addBehavior = data => database.child('behaviors').push(data, response => r
 
 const updateBehaviors = (id, data) => database.child(`behaviors/${id}`).update(data, response => response);
 
+const addStudent = data => database.child('students').push(data, response => response);
+
 const actions = {
   addBehavior,
+  addStudent,
   updateBehaviors,
   database,
 };
