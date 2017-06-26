@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<script>
+/*
+PART 1: BASIC USAGE
+Remember, the pattern for a For loop looks like this:
+for (STARTING_INSTRUCTION; KEEP_GOING_CONDITION; STEP_INSTRUCTION) {
+  // This code will run inside the loop!
+}
+Good luck!
+*/
+console.log('--------------------------------------------------');
+console.log('Step 1: Show the numbers 1 through 10');
+// (Your code here!)
+// console.log('--------------------------------------------------');
+// console.log('Step 2: Show the numbers 0 through 10');
+// (Your code here!)
+// console.log('--------------------------------------------------');
+// console.log('Step 3: Show the numbers 3 through 5');
+// (Your code here!)
+// console.log('--------------------------------------------------');
+// console.log('Step 4: Show the numbers 0 through 1000');
+// (Your code here!)
+// console.log('--------------------------------------------------');
+</script>
+</body>
+</html>
