@@ -25,10 +25,12 @@ export default class App extends Component {
       })
   }
 
+  handleChange(e) {
+    this.setState({students: e.target.value})
+  }
+
     render() {
     console.log('snapshot', this.props)
-
-
 
     return (
       <div>
@@ -42,10 +44,13 @@ export default class App extends Component {
         <br/>
 
         <button
-          onClick={() => this.props.addStudent({ name: "Socrates"})}>
+          onClick={(e) => this.props.addStudent({ name: e.target.value})}>
           Add new student to Firebase database
         </button>
-        <input type="text" id="studentName" placeholder="enter student name"/>
+        <input type="text"
+                id="studentName"
+                placeholder="enter student name"
+                onChange={this.handleChange}/>
 
         <ul>
           {
