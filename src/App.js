@@ -1,37 +1,31 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-// import Action from './Action'
 
 export default class App extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      courseData: {},
       students: [],
-      teacherInfo: {},
-      behaviors: [],
-      database: {}
-    }
+      behaviors: []
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount(){
-
-      this.setState({
-        courseData: this.props.courseData,
-        students: this.props.students,
-        teacherInfo: this.props.teacherInfo,
-        behaviors: this.props.behaviors,
-      })
+    this.setState({
+      students: this.props.students,
+      behaviors: this.props.behaviors
+    })
   }
 
   handleChange(e) {
-    this.setState({students: e.target.value})
+    this.setState({
+      newStudent: e.target.value
+    });
   }
 
-    render() {
-    console.log('snapshot', this.props)
-
+  render() {
     return (
       <div>
         <h1>My App talking with Firebase</h1>
@@ -43,8 +37,8 @@ export default class App extends Component {
         <br/>
         <br/>
 
-        <button
-          onClick={(e) => this.props.addStudent({ name: e.target.value})}>
+        <button type="Submit"
+          onClick={(e) => this.props.addStudent({name: this.state.newStudent})}>
           Add new student to Firebase database
         </button>
         <input type="text"
