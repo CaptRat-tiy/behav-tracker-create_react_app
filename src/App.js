@@ -9,7 +9,8 @@ export default class App extends Component {
       students: [],
       behaviors: []
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeStudent = this.handleChangeStudent.bind(this);
+    this.handleChangeBehavior = this.handleChangeBehavior.bind(this);
   }
 
   componentWillMount(){
@@ -19,9 +20,13 @@ export default class App extends Component {
     })
   }
 
-  handleChange(e) {
+  handleChangeStudent(e) {
     this.setState({
       newStudent: e.target.value,
+    });
+  }
+  handleChangeBehavior(e) {
+    this.setState({
       newBehavior: e.target.value
     });
   }
@@ -37,7 +42,7 @@ export default class App extends Component {
         <input type="text"
                 id="behaviorName"
                 placeholder="enter new behavior"
-                onChange={this.handleChange}/>
+                onChange={this.handleChangeBehavior}/>
         <br/>
         <br/>
 
@@ -48,7 +53,7 @@ export default class App extends Component {
         <input type="text"
                 id="studentName"
                 placeholder="enter student name"
-                onChange={this.handleChange}/>
+                onChange={this.handleChangeStudent}/>
 
         <ul>
           {
