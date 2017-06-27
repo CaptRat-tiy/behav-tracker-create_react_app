@@ -21,7 +21,8 @@ export default class App extends Component {
 
   handleChange(e) {
     this.setState({
-      newStudent: e.target.value
+      newStudent: e.target.value,
+      newBehavior: e.target.value
     });
   }
 
@@ -30,15 +31,18 @@ export default class App extends Component {
       <div>
         <h1>My App talking with Firebase</h1>
         <button
-          onClick={() => this.props.addBehavior({ name: 'applies new ideas'})}>
-          Add new "behavior" to Firebase database
+          onClick={(e) => this.props.addBehavior({behaviorName: this.state.newBehavior})}>
+          Add new behavior to Firebase database
         </button>
-        <input type="text" id="behaviorName" placeholder="enter new behavior"/>
+        <input type="text"
+                id="behaviorName"
+                placeholder="enter new behavior"
+                onChange={this.handleChange}/>
         <br/>
         <br/>
 
         <button type="Submit"
-          onClick={(e) => this.props.addStudent({name: this.state.newStudent})}>
+          onClick={(e) => this.props.addStudent({studentName: this.state.newStudent})}>
           Add new student to Firebase database
         </button>
         <input type="text"
