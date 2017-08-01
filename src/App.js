@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './styles/App.css';
 
 export default class App extends Component {
   constructor(props){
@@ -7,12 +6,14 @@ export default class App extends Component {
 
     this.state = {
       students: [],
-      behaviors: []
+      behaviors: [],
+      newBehavior: ""
     };
+
     this.handleChangeStudent = this.handleChangeStudent.bind(this);
     this.handleChangeBehavior = this.handleChangeBehavior.bind(this);
   }
-
+//(lifecycle method)
   componentWillMount(){
     this.setState({
       students: this.props.students,
@@ -22,7 +23,7 @@ export default class App extends Component {
 
   handleChangeStudent(e) {
     this.setState({
-      newStudent: e.target.value,
+      newStudent: e.target.value
     });
   }
   handleChangeBehavior(e) {
@@ -34,7 +35,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>My App talking with Firebase</h1>
+        <h1 >My App talking with Firebase</h1>
         <button
           onClick={(e) => this.props.addBehavior({behaviorName: this.state.newBehavior})}>
           Add new behavior to Firebase database
@@ -46,7 +47,7 @@ export default class App extends Component {
         <br/>
         <br/>
 
-        <button type="Submit"
+        <button
           onClick={(e) => this.props.addStudent({studentName: this.state.newStudent})}>
           Add new student to Firebase database
         </button>
